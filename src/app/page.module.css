@@ -1,0 +1,51 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.bgImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-app);
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  transform: scale(1.03);
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--bg-opacity);
+  transition: opacity 0.3s ease;
+}
+
+
+.mainContent {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  z-index: 1;
+}
+
+.timelineSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+
+@media (min-width: 768px) {
+  .mainContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem 1.5rem;
+  }
+}
