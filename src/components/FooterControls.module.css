@@ -1,0 +1,144 @@
+.footerControls {
+  position: relative;
+  margin: 3.5rem auto 2.5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 10;
+  width: fit-content;
+}
+
+/* Left Pill Button: Cycles Schedules & Shows Name */
+.cyclePill {
+  height: 48px;
+  border-radius: 9999px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.25rem 1.25rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
+  color: var(--text-secondary);
+}
+
+.cyclePill:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-hover);
+}
+
+.cyclePill:active {
+  transform: scale(0.95);
+}
+
+.cycleText {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* User-specific visual indicators on the cycle pill */
+.ukieActive {
+  color: #db2777;
+  border-color: rgba(219, 39, 119, 0.3);
+  background: rgba(253, 244, 245, 0.85);
+}
+.ukieActive .cycleText {
+  color: #db2777;
+}
+[data-theme="dark"] .ukieActive {
+  background: rgba(55, 20, 38, 0.85);
+}
+
+.iteshActive {
+  color: #4f46e5;
+  border-color: rgba(79, 70, 229, 0.3);
+  background: rgba(240, 242, 255, 0.85);
+}
+.iteshActive .cycleText {
+  color: #4f46e5;
+}
+[data-theme="dark"] .iteshActive {
+  background: rgba(20, 28, 65, 0.85);
+}
+
+.bothActive {
+  color: #ff6b35;
+  border-color: rgba(255, 107, 53, 0.3);
+  background: rgba(255, 244, 240, 0.85);
+}
+.bothActive .cycleText {
+  color: #ff6b35;
+}
+[data-theme="dark"] .bothActive {
+  background: rgba(65, 30, 20, 0.85);
+}
+
+/* Right Pill Button: Theme Changer */
+.themePill {
+  height: 48px;
+  border-radius: 9999px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--border-glass);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.25rem 0.25rem 0.25rem 1.25rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
+  user-select: none;
+}
+
+.themePill:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-hover);
+}
+
+.themePill:active {
+  transform: scale(0.98);
+}
+
+.themeText {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.themeIconCircle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffecd1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d97706;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+[data-theme="dark"] .themeIconCircle {
+  background: #2c245c;
+  color: #c4b5fd;
+  box-shadow: 0 2px 6px rgba(196, 181, 253, 0.15);
+}
+
+@media (max-width: 480px) {
+  .footerControls {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+  }
+}
