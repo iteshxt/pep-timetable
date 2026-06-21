@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pep-timetable-cache-v1';
+const CACHE_NAME = 'pep-timetable-cache-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/web-app-manifest-192x192.png',

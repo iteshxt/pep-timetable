@@ -7,16 +7,23 @@
   align-items: center;
   gap: 1.5rem;
   padding: 0.75rem 2rem;
-  background: var(--bg-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(48px);
+  -webkit-backdrop-filter: blur(48px);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
   border-radius: 9999px;
   box-shadow: var(--shadow-soft);
   position: sticky;
   top: 1rem;
   z-index: 50;
   transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+:global([data-theme="dark"]) .header {
+  background: rgba(26, 26, 38, 0.85);
+  border-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(48px);
+  -webkit-backdrop-filter: blur(48px);
 }
 
 .divider {
@@ -92,15 +99,19 @@
     padding: 0.6rem 1.25rem;
     gap: 1rem;
   }
+
   .subtitle {
     display: none;
   }
+
   .title {
     font-size: 1.1rem;
   }
+
   .timeText {
     font-size: 0.95rem;
   }
+
   .dateText {
     font-size: 0.65rem;
   }
