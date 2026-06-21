@@ -1,0 +1,103 @@
+{
+    "timeSlots": [
+        {
+            "time": "10:00-11:00",
+            "itesh": {
+                "type": "free"
+            },
+            "ukie": {
+                "type": "class",
+                "courseCode": "CSES003",
+                "courseName": "Data Structure",
+                "section": "9S389",
+                "location": "27-108"
+            }
+        },
+        {
+            "time": "11:00-12:00",
+            "itesh": {
+                "type": "free"
+            },
+            "ukie": {
+                "type": "class",
+                "courseCode": "CSES003",
+                "courseName": "Data Structure",
+                "section": "9S389",
+                "location": "27-108"
+            }
+        },
+        {
+            "time": "12:00-13:00",
+            "itesh": {
+                "type": "class",
+                "courseCode": "PEVS10",
+                "courseName": "Verbal - Summer",
+                "section": "9S144",
+                "location": "36-909"
+            },
+            "ukie": {
+                "type": "class",
+                "courseCode": "CSES003",
+                "courseName": "Data Structure",
+                "section": "9S389",
+                "location": "27-108"
+            }
+        },
+        {
+            "time": "13:00-14:00",
+            "type": "common_break",
+            "title": "Common Break"
+        },
+        {
+            "time": "14:00-15:00",
+            "itesh": {
+                "type": "class",
+                "courseCode": "CSES003",
+                "courseName": "Data Structure",
+                "section": "9S337",
+                "location": "26-103"
+            },
+            "ukie": {
+                "type": "class",
+                "courseCode": "CSES003",
+                "courseName": "Data Structure",
+                "section": "9S389",
+                "location": "27-108"
+            }
+        },
+        {
+            "time": "15:00-16:00",
+            "itesh": {
+                "type": "class",
+                "courseCode": "CSES003",
+                "courseName": "Data Structure",
+                "section": "9S337",
+                "location": "26-103"
+            },
+            "ukie": {
+                "type": "class",
+                "courseCode": "CSES003",
+                "courseName": "Data Structure",
+                "section": "9S389",
+                "location": "27-108"
+            }
+        },
+        {
+            "time": "16:00-17:00",
+            "itesh": {
+                "type": "class",
+                "courseCode": "CSES003",
+                "courseName": "Data Structure",
+                "section": "9S337",
+                "location": "26-103"
+            },
+            "ukie": {
+                "type": "class",
+                "courseCode": "PEVS10",
+                "courseName": "Verbal - Summer",
+                "section": "9S104",
+                "location": "37-707"
+            }
+        }
+    ]
+}
