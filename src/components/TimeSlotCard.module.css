@@ -1,0 +1,514 @@
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.card {
+  background: var(--bg-glass);
+  border: 1.5px solid var(--border-glass);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.2s ease, 
+              border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.activeSlot {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Card split sections layout */
+.timeSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  flex-shrink: 0;
+  border-right: 1.5px dashed rgba(0, 0, 0, 0.08);
+  padding: 1.25rem 0.5rem 1.25rem 1.25rem;
+  transition: border-right 0.3s ease;
+}
+
+[data-theme="dark"] .timeSection {
+  border-right: 1.5px dashed rgba(255, 255, 255, 0.08);
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-grow: 1;
+  padding: 1.25rem 0.5rem 1.25rem 0.75rem;
+  min-width: 0; /* Prevents text overflow */
+}
+
+/* Right-side Prominent Room Badge */
+.roomSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 1.25rem 1.5rem 1.25rem 0.5rem;
+}
+
+.roomBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: var(--text-title);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, background-color 0.2s;
+}
+
+[data-theme="dark"] .roomBadge {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.roomBadge:hover {
+  transform: scale(1.05);
+}
+
+.roomText {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Time texts styling */
+.timeTextStart,
+.timeTextEnd {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-title);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.timeTextDivider {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin: 0.15rem 0;
+  opacity: 0.7;
+}
+
+/* 
+ * Course-specific Solid Pastel Styling - Completely Reworked for Desaturation
+ */
+
+/* 1. Data Structure Card (Sky Blue) */
+.dsaCard {
+  background: #e0f2fe;
+  border-color: #bae6fd;
+}
+.dsaCard .courseName {
+  color: #0369a1;
+}
+.dsaCard .courseMetaLabel {
+  color: #0284c7;
+}
+.dsaCard:hover {
+  border-color: #0284c7;
+}
+[data-theme="dark"] .dsaCard {
+  background: rgba(14, 30, 45, 0.95); /* Muted slate-grey */
+  border-color: rgba(56, 189, 248, 0.12);
+}
+[data-theme="dark"] .dsaCard .courseName {
+  color: #7dd3fc; /* Soft blue */
+}
+[data-theme="dark"] .dsaCard .courseMetaLabel {
+  color: #38bdf8;
+}
+[data-theme="dark"] .dsaCard:hover {
+  border-color: #38bdf8;
+}
+
+/* 2. Verbal Card (Indigo/Lavender) */
+.verbalCard {
+  background: #ede9fe;
+  border-color: #c4b5fd;
+}
+.verbalCard .courseName {
+  color: #5b21b6;
+}
+.verbalCard .courseMetaLabel {
+  color: #8b5cf6;
+}
+.verbalCard:hover {
+  border-color: #8b5cf6;
+}
+[data-theme="dark"] .verbalCard {
+  background: rgba(30, 32, 45, 0.95); /* Muted dark lavender-grey */
+  border-color: rgba(147, 197, 253, 0.12);
+}
+[data-theme="dark"] .verbalCard .courseName {
+  color: #93c5fd; /* Soft lavender */
+}
+[data-theme="dark"] .verbalCard .courseMetaLabel {
+  color: #60a5fa;
+}
+[data-theme="dark"] .verbalCard:hover {
+  border-color: #60a5fa;
+}
+
+/* Fallback Class Card */
+.classCard {
+  background: var(--class-bg);
+  border-color: var(--class-border);
+}
+.classCard .courseName {
+  color: var(--class-text);
+}
+.classCard .courseMetaLabel {
+  color: var(--class-accent);
+}
+.classCard:hover {
+  border-color: var(--class-accent);
+}
+
+/* Free Time Card (Mint Green) */
+.freeCard {
+  background: var(--free-bg);
+  border-color: var(--free-border);
+}
+.freeCard .courseName {
+  color: var(--free-text);
+}
+.freeCard .courseMetaLabel {
+  color: var(--free-accent);
+}
+.freeCard:hover {
+  border-color: var(--free-accent);
+}
+
+/* Break Card (Peach/Amber) */
+.breakCard {
+  background: var(--break-bg);
+  border-color: var(--break-border);
+}
+.breakCard .courseName {
+  color: var(--break-text);
+}
+.breakCard .courseMetaLabel {
+  color: var(--break-accent);
+}
+.breakCard:hover {
+  border-color: var(--break-accent);
+}
+
+/* Card Header details */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.courseMetaLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.courseName {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* User identity pill */
+.userBadge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.iteshBadge {
+  color: #4f46e5;
+  background: rgba(79, 70, 229, 0.08);
+  border: 1px solid rgba(79, 70, 229, 0.15);
+}
+
+.ukieBadge {
+  color: #db2777;
+  background: rgba(219, 39, 119, 0.08);
+  border: 1px solid rgba(219, 39, 119, 0.15);
+}
+
+/* Consolidated compare card styles */
+.compareCard {
+  align-items: stretch;
+}
+
+.rowsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
+  padding: 0.75rem;
+  min-width: 0;
+}
+
+.userRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.userRow:hover {
+  transform: translateY(-1px);
+}
+
+.userRowHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.userRowContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.courseNameSub {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-title);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.miniRoomBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  color: var(--text-title);
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .miniRoomBadge {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.04);
+}
+
+.rowDivider {
+  display: none; /* Hide divider since gap and row backgrounds separate them beautifully */
+}
+
+/* Row type themes - Light Mode (Pastel solid tints) */
+.dsaRow {
+  background: rgba(224, 242, 254, 0.65);
+  border-color: rgba(186, 230, 253, 0.45);
+}
+.dsaRow .courseNameSub {
+  color: #0369a1;
+}
+.dsaRow .courseMetaLabel {
+  color: #0284c7;
+}
+
+.verbalRow {
+  background: rgba(237, 233, 254, 0.65);
+  border-color: rgba(196, 181, 253, 0.45);
+}
+.verbalRow .courseNameSub {
+  color: #5b21b6;
+}
+.verbalRow .courseMetaLabel {
+  color: #8b5cf6;
+}
+
+.freeRow {
+  background: rgba(224, 253, 235, 0.65);
+  border-color: rgba(187, 247, 208, 0.45);
+}
+.freeRow .courseNameSub {
+  color: #166534;
+}
+.freeRow .courseMetaLabel {
+  color: #10b981;
+}
+
+.classRow {
+  background: rgba(240, 236, 255, 0.65);
+  border-color: rgba(196, 181, 253, 0.45);
+}
+.classRow .courseNameSub {
+  color: #5b21b6;
+}
+.classRow .courseMetaLabel {
+  color: #8b5cf6;
+}
+
+/* Row type themes - Dark Mode (Muted desaturated slate-charcoal values) */
+[data-theme="dark"] .dsaRow {
+  background: rgba(14, 30, 45, 0.6);
+  border-color: rgba(56, 189, 248, 0.08);
+}
+[data-theme="dark"] .dsaRow .courseNameSub {
+  color: #7dd3fc;
+}
+[data-theme="dark"] .dsaRow .courseMetaLabel {
+  color: #38bdf8;
+}
+
+[data-theme="dark"] .verbalRow {
+  background: rgba(30, 32, 45, 0.6);
+  border-color: rgba(147, 197, 253, 0.08);
+}
+[data-theme="dark"] .verbalRow .courseNameSub {
+  color: #93c5fd;
+}
+[data-theme="dark"] .verbalRow .courseMetaLabel {
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .freeRow {
+  background: rgba(20, 26, 23, 0.6);
+  border-color: rgba(52, 211, 153, 0.08);
+}
+[data-theme="dark"] .freeRow .courseNameSub {
+  color: #a7f3d0;
+}
+[data-theme="dark"] .freeRow .courseMetaLabel {
+  color: #34d399;
+}
+
+[data-theme="dark"] .classRow {
+  background: rgba(30, 32, 45, 0.6);
+  border-color: rgba(147, 197, 253, 0.08);
+}
+[data-theme="dark"] .classRow .courseNameSub {
+  color: #93c5fd;
+}
+[data-theme="dark"] .classRow .courseMetaLabel {
+  color: #60a5fa;
+}
+
+/* Responsive grid for comparison */
+@media (min-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
+  .cardsContainer {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .card {
+    flex: 1;
+    min-width: 0; /* Prevents overflow in flexbox */
+  }
+
+  .rowsContainer {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  
+  .userRow {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .rowDivider {
+    display: block;
+    width: 1px;
+    background: rgba(0, 0, 0, 0.06);
+    align-self: stretch;
+    margin: 0.5rem 0;
+  }
+  
+  [data-theme="dark"] .rowDivider {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  .timeSection {
+    width: 90px;
+    padding: 1rem 0.4rem 1rem 1rem;
+  }
+  .infoSection {
+    padding: 1rem 0.4rem 1rem 0.5rem;
+  }
+  .roomSection {
+    padding: 1rem 1rem 1rem 0.25rem;
+  }
+  .roomBadge {
+    padding: 0.4rem 0.65rem;
+    border-radius: 12px;
+  }
+  .roomText {
+    font-size: 0.85rem;
+  }
+  .courseName {
+    font-size: 1.1rem;
+  }
+  .timeTextStart,
+  .timeTextEnd {
+    font-size: 1.1rem;
+  }
+  .courseNameSub {
+    font-size: 1.05rem;
+  }
+  .rowsContainer {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  .userRow {
+    padding: 0.65rem 0.85rem;
+  }
+}
