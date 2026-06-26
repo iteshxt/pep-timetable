@@ -13,9 +13,40 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<"itesh" | "ukie" | "both">("ukie");
   const [liveTime, setLiveTime] = useState("");
   const [theme, setThemeState] = useState<"system" | "light" | "dark">("system");
-
-  const timeSlots = (timetableData as { timeSlots: TimeSlot[] }).timeSlots;
+  const [timeSlots, setTimeSlots] = useState<TimeSlot[]>(
+    (timetableData as { timeSlots: TimeSlot[] }).timeSlots
+  );
   const notifiedSlotsRef = useRef<Record<number, boolean>>({});
+
+  // Dynamic sync to read latest timetable.json from the API without reload
+  useEffect(() => {
+    const fetchTimetable = async () => {
+      try {
+        const res = await fetch("/api/timetable");
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.timeSlots) {
+            setTimeSlots(data.timeSlots);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to sync timetable:", err);
+      }
+    };
+
+    fetchTimetable();
+    const interval = setInterval(fetchTimetable, 5000);
+
+    const handleFocus = () => {
+      fetchTimetable();
+    };
+    window.addEventListener("focus", handleFocus);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("focus", handleFocus);
+    };
+  }, []);
 
   // Request notifications permission on mount
   useEffect(() => {
