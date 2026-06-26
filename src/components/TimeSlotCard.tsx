@@ -34,7 +34,7 @@ const UserCard = ({
     if (!isClass) return styles.freeCard;
     const courseName = detail.courseName.toLowerCase();
     const courseCode = detail.courseCode.toLowerCase();
-    if (courseCode.includes("cses003") || courseName.includes("data structure")) {
+    if (courseCode.includes("cses003") || courseCode.includes("cses001") || courseName.includes("data structure")) {
       return styles.dsaCard;
     }
     if (courseCode.includes("pevs10") || courseName.includes("verbal")) {
@@ -111,7 +111,7 @@ const BothUsersCard = ({
     if (detail.type !== "class") return styles.freeRow;
     const courseName = detail.courseName.toLowerCase();
     const courseCode = detail.courseCode.toLowerCase();
-    if (courseCode.includes("cses003") || courseName.includes("data structure")) {
+    if (courseCode.includes("cses003") || courseCode.includes("cses001") || courseName.includes("data structure")) {
       return styles.dsaRow;
     }
     if (courseCode.includes("pevs10") || courseName.includes("verbal")) {
