@@ -7,10 +7,10 @@
             },
             "ukie": {
                 "type": "class",
-                "courseCode": "CSES003",
+                "courseCode": "CSES001",
                 "courseName": "Data Structure",
                 "section": "9S389",
-                "location": "34-405"
+                "location": "34-501A"
             }
         },
         {
@@ -20,10 +20,10 @@
             },
             "ukie": {
                 "type": "class",
-                "courseCode": "CSES003",
+                "courseCode": "CSES001",
                 "courseName": "Data Structure",
                 "section": "9S389",
-                "location": "34-405"
+                "location": "34-501A"
             }
         },
         {
@@ -37,10 +37,10 @@
             },
             "ukie": {
                 "type": "class",
-                "courseCode": "CSES003",
+                "courseCode": "CSES001",
                 "courseName": "Data Structure",
                 "section": "9S389",
-                "location": "34-405"
+                "location": "34-501A"
             }
         },
         {
@@ -52,44 +52,44 @@
             "time": "14:00-15:00",
             "itesh": {
                 "type": "class",
-                "courseCode": "CSES003",
+                "courseCode": "CSES001",
                 "courseName": "Data Structure",
                 "section": "9S337",
-                "location": "34-405"
+                "location": "34-508"
             },
             "ukie": {
                 "type": "class",
-                "courseCode": "CSES003",
+                "courseCode": "CSES001",
                 "courseName": "Data Structure",
                 "section": "9S389",
-                "location": "34-405"
+                "location": "34-501A"
             }
         },
         {
             "time": "15:00-16:00",
             "itesh": {
                 "type": "class",
-                "courseCode": "CSES003",
+                "courseCode": "CSES001",
                 "courseName": "Data Structure",
                 "section": "9S337",
-                "location": "34-405"
+                "location": "34-508"
             },
             "ukie": {
                 "type": "class",
-                "courseCode": "CSES003",
+                "courseCode": "CSES001",
                 "courseName": "Data Structure",
                 "section": "9S389",
-                "location": "34-405"
+                "location": "34-501A"
             }
         },
         {
             "time": "16:00-17:00",
             "itesh": {
                 "type": "class",
-                "courseCode": "CSES003",
+                "courseCode": "CSES001",
                 "courseName": "Data Structure",
                 "section": "9S337",
-                "location": "34-405"
+                "location": "34-508"
             },
             "ukie": {
                 "type": "class",
